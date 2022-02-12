@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
     public string LoadScene;
 
     //closes the game 
@@ -18,5 +17,14 @@ public class MainMenu : MonoBehaviour
     public void StartLevel()
     {
       SceneManager.LoadScene(LoadScene);
+    }
+
+    public void LoadGame()
+    {
+        if (PlayerPrefs.HasKey("LevelSaved"))
+        {
+            string levelToLoad = PlayerPrefs.GetString("LevelSaved");
+            SceneManager.LoadScene(levelToLoad);
+        }
     }
 }

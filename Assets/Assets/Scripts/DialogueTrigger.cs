@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class DialogueTrigger : MonoBehaviour
 
     public float time = 0.8f;
     public float timer = Time.time;
+
+    public GameObject Player;
+
+    public bool interactKey;
 
     /*void Update()
     {
@@ -18,6 +23,11 @@ public class DialogueTrigger : MonoBehaviour
         }
     }*/
 
+    private void Start()
+    {
+        Player = GameObject.Find("PlayerParent");
+    }
+
     //gets the users input based on a timer to disallow spam and start the dialogue
     void Update()
     {
@@ -25,12 +35,18 @@ public class DialogueTrigger : MonoBehaviour
         if (timer >= time)
         {
             // On spacebar press, send dog
-            if (Input.GetMouseButton(0))
+            if (Player.GetComponent<ThirdPersonController>().InteractOnOff)
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
                 timer = 0;
+                interactKey = false;
             }
+        }
+
+        if (Player.GetComponent<ThirdPersonController>().InteractOnOff)
+        {
+            interactKey = true;
         }
     }
 }

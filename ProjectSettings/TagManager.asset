@@ -10,6 +10,8 @@ TagManager:
   - Card
   - NPC
   - KillBox
+  - UI
+  - SecretBox
   layers:
   - Default
   - TransparentFX

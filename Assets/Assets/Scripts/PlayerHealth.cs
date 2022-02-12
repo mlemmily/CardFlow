@@ -14,11 +14,21 @@ public class PlayerHealth : MonoBehaviour
 
     public bool EnableKillBoxDamage = false;
 
+    private GameObject Menu;
+
+    public float SecretCountPlayer;
+
+    public GameObject SecretBox;
+
     //sets the players health to max on start
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+    }
+    void Awake()
+    {
+        SecretBox = GameObject.Find("SecretBox");
     }
 
     //if the player touches an enemy they take damage
@@ -27,9 +37,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             TakeDamage(20);
-        }
-
-        
+        } 
     }
 
     //sets the player to take damage with any trigger tagged as specified and sets the killbox if in contact
@@ -44,6 +52,13 @@ public class PlayerHealth : MonoBehaviour
         {
             EnableKillBoxDamage = true;
         }
+
+        //ADDS ONTO SECRET COUNTER
+        if (other.gameObject.tag == "SecretBox")
+        {
+            SecretCountDataHolder.SecretCount += 1;
+            Debug.Log("works?");
+        }
     }
 
     //disables the killbox on leave
@@ -52,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.tag == "KillBox")
         {
             EnableKillBoxDamage = false;
-        }
+        }      
     }
 
     //The logic for taking damage and checking if the player has lost all their life more than twice

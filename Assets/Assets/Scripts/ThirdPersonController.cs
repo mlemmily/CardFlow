@@ -101,6 +101,7 @@ namespace StarterAssets
 
 		public bool InteractOnOff = false;
 
+		public AudioSource WalkSound;
 		public float time = 0.8f;
     	public float timer = Time.time;
 
@@ -126,6 +127,8 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 
+			WalkSound = GetComponent<AudioSource>();
+
 		}
 
 		private void Update()
@@ -136,6 +139,7 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 			Interact();
+			MoveSoundPlay();
 		}
 
 		private void Interact()
@@ -155,6 +159,20 @@ namespace StarterAssets
 				}
 
         }
+
+		private void MoveSoundPlay()
+		{
+			if(notGliding == false)
+			{
+				if(!WalkSound.isPlaying)
+				WalkSound.Play();
+				Debug.Log("FalsenNOT GIRLDE");
+			}
+			else
+			{
+				WalkSound.Stop();
+			}
+		}
 
 		
 
