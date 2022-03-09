@@ -16,6 +16,7 @@ namespace StarterAssets
 		public bool aim;
 		public bool attack;
 		public bool interact;
+		public bool pause;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -69,6 +70,11 @@ namespace StarterAssets
 		{
 			InteractInput(value.isPressed);
 		}
+
+		public void OnPause(InputValue value)
+		{
+			PauseInput(value.isPressed);
+		}
 #else
 	// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -114,6 +120,11 @@ namespace StarterAssets
 			interact = newInteractState;
 		}
 
+		public void PauseInput(bool newInteractState)
+		{
+			pause = newInteractState;
+		}
+
 #if !UNITY_IOS || !UNITY_ANDROID
 
 		private void OnApplicationFocus(bool hasFocus)
@@ -129,5 +140,4 @@ namespace StarterAssets
 #endif
 
 	}
-	
 }

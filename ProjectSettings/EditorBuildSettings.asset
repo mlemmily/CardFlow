@@ -14,6 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 26e20f4a7e8902e44b321fe7ffe82e44
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 17e2ae2531c89a5489788222a9eee937
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: b4782d76fe30f044cb43346ad2c2be4a
+  - enabled: 0
+    path: Assets/Scenes/YAAA.unity
+    guid: 249e8e1cb0325b24a8cea57fe6af4023
+  - enabled: 0
+    path: Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
+    guid: e9017d5f96b9f09489b4b37e1d6eb914
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

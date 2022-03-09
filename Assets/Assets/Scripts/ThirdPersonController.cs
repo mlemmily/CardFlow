@@ -100,6 +100,7 @@ namespace StarterAssets
 		public GameObject[] Dialogue;
 
 		public bool InteractOnOff = false;
+		public bool MenuOnOff = false;
 
 		public AudioSource WalkSound;
 		public float time = 0.8f;
@@ -140,6 +141,7 @@ namespace StarterAssets
 			Move();
 			Interact();
 			MoveSoundPlay();
+			Pause();
 		}
 
 		private void Interact()
@@ -157,8 +159,23 @@ namespace StarterAssets
 						_input.interact = false;
 					}
 				}
-
         }
+
+		private void Pause()
+		{
+			timer += Time.deltaTime;
+			if (timer >= time)
+			{
+				MenuOnOff = false;
+			}
+			if (_input.pause)
+			{
+				{
+					MenuOnOff = true;
+					_input.pause = false;
+				}
+			}
+		}
 
 		private void MoveSoundPlay()
 		{

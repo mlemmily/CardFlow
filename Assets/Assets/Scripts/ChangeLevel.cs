@@ -7,6 +7,8 @@ public class ChangeLevel : MonoBehaviour
 {
 
     public string LevelName;
+    public GameObject CameraUI;
+    public GameObject LoadingScreenUI;
     void Start()
     {
         
@@ -23,7 +25,9 @@ public class ChangeLevel : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(LevelName); 
+            CameraUI.SetActive(false);
+            LoadingScreenUI.SetActive(true);
+            FindObjectOfType<LoadingScreen>().LoadScene(LevelName);
         }
     }
 }
