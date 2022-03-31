@@ -178,7 +178,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Once we take over the castle, the world is next! The carriage holds many
+    resources needed...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -384,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130, y: 53}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -109.3, y: 53}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2679400200607145479
 CanvasRenderer:
@@ -415,7 +416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Moke
+  m_text: Ragged Note
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -543,14 +544,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Tradesman
+    name: Ragged Note
     sentences:
-    - oh thank heavens you're here, please help my friend!
-    - He has been took captive by this bandit's friends, please help me save him.
-    - He should be down the right side of this path. Thank you so much and I wish
-      you well!
+    - Once we take over the castle, the world is next! The carriage holds many resources
+      needed...
+    - So please halt it and take the goods, this will be useful soon.
   time: 0.8
   timer: 0
+  Player: {fileID: 0}
+  interactKey: 0
 --- !u!1 &2679400201370819007
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class SaveController : MonoBehaviour
 {
 
-    public float SecretCount;
-
+    //Saves a string of characters for the main menu continue game button to be read and accessed
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))

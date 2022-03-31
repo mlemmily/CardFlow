@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiParent: {fileID: 1328569231097886442}
-  DialogueSpeaker: {fileID: 6095672115820206446, guid: 3923afc27ff838443bebec45251faa79,
-    type: 3}
   nameText: {fileID: 8482582819344427930}
   dialogueText: {fileID: 3613178951536563893}
   FirstSentence: 1
@@ -116,7 +114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: oh thank heavens you're here, please help my friend!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -245,7 +243,7 @@ RectTransform:
   m_GameObject: {fileID: 3026644421152995296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.9768534, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7462258971984400941}
@@ -253,7 +251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 55}
+  m_AnchoredPosition: {x: -139.3, y: 55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7227743763980055350
@@ -360,7 +358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Moke
+  m_text: Tradesman
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -494,10 +492,10 @@ MonoBehaviour:
     - He has been took captive by this bandit's friends, please help me save him.
     - He should be down the right side of this path. Thank you so much and I wish
       you well!
-  DialogueSpeakerTrigger: {fileID: 6095672115820206446, guid: 3923afc27ff838443bebec45251faa79,
-    type: 3}
   time: 0.8
   timer: 0
+  Player: {fileID: 0}
+  interactKey: 0
 --- !u!1 &8721544053423907574
 GameObject:
   m_ObjectHideFlags: 0

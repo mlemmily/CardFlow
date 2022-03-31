@@ -9,9 +9,13 @@ public class ChangeLevel : MonoBehaviour
     public string LevelName;
     public GameObject CameraUI;
     public GameObject LoadingScreenUI;
+    public GameObject DelOLDLoadingScreenUI;
+
+    //Deletes the old loading screen on start to fix a bug where the loading screen wont delete and causes the game to break.
     void Start()
     {
-        
+        DelOLDLoadingScreenUI = GameObject.Find("LoadingScreen");
+        Destroy(DelOLDLoadingScreenUI);
     }
 
     // Update is called once per frame

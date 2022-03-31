@@ -30,6 +30,9 @@ public class EnemyAiMELEE : MonoBehaviour
     //ANIMATIONS
     public Animator animatorPUNCH;
 
+    //grabs the player when object is awake, grabs a navmesh which is used to make 
+    //the enemies navigate across the map and grabs the animation for punching
+
     private void Awake()
     {
         player = GameObject.Find("PlayerParent").transform;

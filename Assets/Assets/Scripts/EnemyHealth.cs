@@ -6,6 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public GameObject enemyHealthBarContainer;
+    public HealthBar enemyHealthBar;
 
     [SerializeField] public Transform bearSpawnPos;
     [SerializeField] public Transform bearPrefab;
@@ -15,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
     {
         GameObject enemyRend = GameObject.FindWithTag("Enemy");
         currentHealth = maxHealth;
+        enemyHealthBar.SetMaxHealth(maxHealth);
     }
 
     //Removes the enemies health if they come in contact with a card.
@@ -25,12 +28,19 @@ public class EnemyHealth : MonoBehaviour
             TakeDamage(20);
             Debug.Log("test");
         }
+
+        if (collision.gameObject.tag == "QuickCard")
+        {
+            TakeDamage(3);
+            Debug.Log("test");
+        }
     }
 
     //the variable which removes health
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        enemyHealthBar.SetHealth(currentHealth);
     }
 
     //checks if the health is 0 to spawn a bear and delete the gameobject
@@ -39,6 +49,7 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth < 1)
         {
             Instantiate(bearPrefab, bearSpawnPos.position, Quaternion.LookRotation(Vector3.up));
+            Destroy(enemyHealthBarContainer);
             Destroy(gameObject);
             currentHealth = 2;
         }

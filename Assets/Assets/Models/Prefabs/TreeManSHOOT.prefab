@@ -112,6 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  enemyHealthBarContainer: {fileID: 0}
+  enemyHealthBar: {fileID: 0}
   bearSpawnPos: {fileID: 130458331328443129}
   bearPrefab: {fileID: 597025415149767721, guid: 5a35abb52738a90478a14276968da076,
     type: 3}
@@ -160,7 +162,7 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   walkPointRange: 4
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 1.8
   alreadyAttacked: 0
   projectile: {fileID: 7584393755345139940, guid: 9840d94baa1afca418fa34d05633c06b,
     type: 3}

@@ -14,11 +14,15 @@ public class ThirdPersonAttackController : MonoBehaviour
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
     [SerializeField] private Transform pfBulletProjectile;
+
+    [SerializeField] private Transform pfBulletProjectileQUICK;
     [SerializeField] private Transform spawnBulletPosition;
 
 
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
+
+    public bool coolDown = false;
 
 
     //grabs the inputs and the player controller
@@ -60,12 +64,27 @@ public class ThirdPersonAttackController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
         }
         //allows the player to shoot if aiming in
-        if (starterAssetsInputs.aim && starterAssetsInputs.attack)
+        if (starterAssetsInputs.aim && starterAssetsInputs.attack && coolDown == false)
         {
             Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
             Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            coolDown = true;
+            starterAssetsInputs.attack = false;
+            StartCoroutine(coolDownTimer());
+        }
+
+        if (!starterAssetsInputs.aim && starterAssetsInputs.attack)
+        {
+            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectileQUICK, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             starterAssetsInputs.attack = false;
         }
+    }
+
+    IEnumerator coolDownTimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        coolDown = false;
     }
 
 }

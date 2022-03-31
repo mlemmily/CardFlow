@@ -12,6 +12,7 @@ TagManager:
   - KillBox
   - UI
   - SecretBox
+  - QuickCard
   layers:
   - Default
   - TransparentFX

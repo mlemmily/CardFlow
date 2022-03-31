@@ -23,6 +23,8 @@ public class DialogueTrigger : MonoBehaviour
         }
     }*/
 
+    //grabs the player on start
+
     private void Start()
     {
         Player = GameObject.Find("PlayerParent");

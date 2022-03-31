@@ -15,6 +15,7 @@ public class InstantiateDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("PlayerParent");
     }
 
     // Update is called once per frame
@@ -32,14 +33,19 @@ public class InstantiateDialogue : MonoBehaviour
         if(Player.GetComponent<ThirdPersonController>().InteractOnOff)
         {
             interactKey = true;
+            StartCoroutine(InteractOFF());
         }
     }
 
     //checks if the player is in range
     void OnTriggerEnter(Collider other)
     {
+        Player = GameObject.Find("PlayerParent");
+
         if (other.tag == "Player")
+        {
             isInRange = true;
+        }
     }
 
     //checks if the player is out of range
@@ -53,9 +59,7 @@ public class InstantiateDialogue : MonoBehaviour
     public void SetTalkingFalse()
     {
         Talking = false;
-
-    }
-
+    }   
 
     public void InteractKeyTrue()
     {
@@ -67,5 +71,11 @@ public class InstantiateDialogue : MonoBehaviour
     {
         interactKey = false;
         Debug.Log("InteractKeyTruee");
+    }
+
+    private IEnumerator InteractOFF()
+    {
+        yield return new WaitForSeconds(0.1f);
+        interactKey = false;
     }
 }

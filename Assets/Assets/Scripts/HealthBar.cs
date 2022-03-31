@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
     
+    //sets the max health as teh value on the slider and then sets the slider length to the leath
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;

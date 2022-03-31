@@ -7,11 +7,14 @@ using StarterAssets;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject controlsMenu;
     public bool menuKey = false;
     public bool Paused = false;
     public GameObject Player;
 
+    //Checks if the player has pressed the menu button and enables the UI.
+    // if the player presses it again, it will close the UI
     void Update()
     {
         if (menuKey == true && Paused == false)
@@ -37,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //Pauses the game by setting the game speed to 0
     public void Pause()
     {
         pauseMenu.SetActive(true);
@@ -44,14 +48,17 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    //Resumes the game and disables the UI on resume.
     public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         controlsMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
+    //Sends the player to the main menu
     public void Home(int sceneID)
     {
         Time.timeScale = 1f;

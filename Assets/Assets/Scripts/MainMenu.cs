@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
       SceneManager.LoadScene(LoadScene);
     }
 
+    //Grabs the playerprefs key for the scene to load when loading your save
     public void LoadGame()
     {
         if (PlayerPrefs.HasKey("LevelSaved"))

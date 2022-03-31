@@ -22,7 +22,7 @@ public class LoadingScreen : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 	}
 
-	//
+	//Sets the canvas loading to zero and enables the canvas and starts to begin the loading bar
 	public void LoadScene(string sceneName)
 	{
 		UpdateProgressUI(0);
@@ -31,6 +31,8 @@ public class LoadingScreen : MonoBehaviour
 		StartCoroutine(BeginLoad(sceneName));
 	}
 
+	//Grabs the next scene to load and starts to updating the loading bar until it is completed, 
+	//which then disables the loading screen once the scene has been loaded successfully.
 	private IEnumerator BeginLoad(string sceneName)
 	{
 		operation = SceneManager.LoadSceneAsync(sceneName);
@@ -46,6 +48,7 @@ public class LoadingScreen : MonoBehaviour
 		canvas.gameObject.SetActive(false);
 	}
 
+	//Makes the loading bar function visually while showing a percentage
 	private void UpdateProgressUI(float progress)
 	{
 		slider.value = progress;

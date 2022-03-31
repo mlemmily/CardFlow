@@ -32,6 +32,7 @@ public class EnemyAiSHOOT : MonoBehaviour
     public float time = 2f;
     public float timer = Time.time;
 
+    //grabs player on awake to navigate for the enemy and uses the navmesh to find a path to get to their enemy (which is the player)
     private void Awake()
     {
         player = GameObject.Find("PlayerParent").transform;
@@ -105,7 +106,7 @@ public class EnemyAiSHOOT : MonoBehaviour
         {
             //Attack code here
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 64f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 58f, ForceMode.Impulse);
             rb.AddForce(transform.up * 6f, ForceMode.Impulse);
 
             alreadyAttacked = true;

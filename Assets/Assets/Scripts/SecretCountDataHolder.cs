@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class SecretCountDataHolder : MonoBehaviour
 {
-    public static float SecretCount; 
+    //a value which can be accessed throughout the entire game, specifically for showing the amount of secrets found
+    public static float SecretCount;    
 }

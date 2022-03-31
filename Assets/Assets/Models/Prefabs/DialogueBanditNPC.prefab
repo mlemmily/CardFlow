@@ -65,10 +65,10 @@ MonoBehaviour:
       5 minutes
     - Come to the left side and just ignore all those worries, they're behind you.
     - Take the easy side, you HEAR me?! Good, see ya
-  DialogueSpeakerTrigger: {fileID: 7098725520586068333, guid: 668eb914a58ff9f44be02982b4418427,
-    type: 3}
   time: 0.8
   timer: 0
+  Player: {fileID: 0}
+  interactKey: 0
 --- !u!1 &2827052547612581949
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,8 +216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiParent: {fileID: 7044291325380175621}
-  DialogueSpeaker: {fileID: 7098725520586068333, guid: 668eb914a58ff9f44be02982b4418427,
-    type: 3}
   nameText: {fileID: 5537617794411367071}
   dialogueText: {fileID: 3346325882862739938}
   FirstSentence: 1
@@ -366,7 +364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BanditLeader
+  m_text: Bandit Leader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -429,7 +427,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -48.210022, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -495,7 +493,7 @@ RectTransform:
   m_GameObject: {fileID: 7173664297155370428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 2.2819731, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1633845006657367029}
@@ -503,7 +501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 55}
+  m_AnchoredPosition: {x: -121.4, y: 55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &798727768375324303
@@ -610,7 +608,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Don't listen to that lowly trader, a guy like him probably wouldn't even
+    last 5 minutes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

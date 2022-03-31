@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
             if (sentences.Count == 0)
             {
                 EndDialogue();
+                EndDialogueBOSS();
                 FirstSentence = true;
                 return;
             }
@@ -58,7 +59,19 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Convo");
-        FindObjectOfType<InstantiateDialogue>().SetTalkingFalse();
+        InstantiateDialogue[] dialogues = FindObjectsOfType<InstantiateDialogue>();
+        foreach(InstantiateDialogue dialogue in dialogues) 
+        {
+            Debug.Log("sasdf");
+            dialogue.SetTalkingFalse();
+        }
         Destroy(uiParent);
+    }
+
+    void EndDialogueBOSS()
+    {
+        FindObjectOfType<BossDialogue>().SetTalkingFalse();
+        Destroy(uiParent);
+        return;
     }
 }
