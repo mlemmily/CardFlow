@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Boss : MonoBehaviour
     public GameObject BossEnemy;
 
     public GameObject BossDialogue;
+
+    public GameObject loadingScreen;
+    public string LevelName;
 
     [SerializeField] public Transform bearSpawnPos;
     [SerializeField] public Transform bearPrefab;
@@ -54,11 +58,13 @@ public class Boss : MonoBehaviour
         }
     }
 
-    //checks if the health is 0 to spawn a bear and delete the gameobject
+    //checks if the health is 0 to spawn a bear and delete the gameobject finishing off by loading the last scene
     void Update()
     {
         if (currentHealth < 1)
         {
+            loadingScreen.SetActive(true);
+            FindObjectOfType<LoadingScreen>().LoadScene(LevelName);
             Instantiate(bearPrefab, bearSpawnPos.position, Quaternion.LookRotation(Vector3.up));
             Destroy(bossHealthBarContainer);
             Destroy(gameObject);
